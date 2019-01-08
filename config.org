@@ -1,5 +1,4 @@
-#
-+TITLE: Emacs Config
+#+TITLE: Emacs Config
 #+AUTHOR: Kyle Erwin
 #+TOC: true
 
