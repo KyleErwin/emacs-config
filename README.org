@@ -1,0 +1,3 @@
+# Emacs Config
+
+Copy the org folder into the home path.
