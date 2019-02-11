@@ -243,7 +243,26 @@ Include magit
 #+BEGIN_SRC emacs-lisp
  (use-package magit
    :ensure t
-   :bind ("C-x g" . magit-status))
+   :bind ("C-x g" . magit-status)
+   :bind ("C-c C-g C-s" . magit-stage-file)
+   :bind ("C-c C-g C-c" . magit-commit-create))
+#+END_SRC
+
+Include git g
+
+** utter. Git gutter works on save, don't want it
+interactive... for now.
+#+BEGIN_SRC emacs-lisp
+ (use-package git-gutter)
+
+(custom-set-variables
+ '(git-gutter:modified-sign "~~")
+ '(git-gutter:added-sign "++")
+ '(git-gutter:deleted-sign "--"))
+
+(set-face-foreground 'git-gutter:modified "yellow")
+
+(global-git-gutter-mode +1)
 #+END_SRC
 
 ** Hippie-expand
