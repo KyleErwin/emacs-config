@@ -531,6 +531,7 @@ Completion service using =company-mode=
    :config
    (projectile-mode)
    (setq projectile-enable-caching t))
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+END_SRC
 
 ** Snippets
