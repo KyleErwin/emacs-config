@@ -1,1 +1,16 @@
-* Emacs Config
+#+TITLE: Emacs Config
+#+AUTHOR: Kyle Erwin
+
+My ever evolving emacs config.
+
+*  Getting Started
+
+** Installing Emacs
+
+Emacs 26 for Ubuntu.
+
+#+BEGIN_SRC bash
+sudo add-apt-repository ppa:kelleyk/emacs
+sudo apt-get update
+sudo apt install emacs26
+#+END_SRC
