@@ -3,7 +3,7 @@
 
 My ever evolving emacs config.
 
-*  Getting Started
+* Getting Started
 ** Installing Emacs
 
 Emacs 26 for Ubuntu.
@@ -30,19 +30,19 @@ rm -rf fonts
 
 * Using This Config
 
-Download or clone this repo into ~~/.emacs.d/~ (create if
+Download or clone this repo into =~/.emacs.d/= (create if
 necessary). Then start emacs and the config should load. Once that is
 finished use ~M-x all the icons install~ where ~M~ represents ~Alt~.
 Restart emacs and you are good to go.
 
 If you want to make use of ~ensime~ add the following line to
-~~/.sbt/1.0/plugins/plugins.sbt~ (create if necessary):
+=~.sbt/1.0/plugins/plugins.sbt= (create if necessary):
 
 ~addSbtPlugin("org.ensime" % "sbt-ensime" % "2.5.1")~
 
 ** Links to Documentation
 
--[[http://ensime.github.io/editors/emacs/cheat_sheet/][Ensime]]
--[[https://emacs-helm.github.io/helm/][Helm]]
--[[http://joaotavora.github.io/yasnippet/][Yassnippet]]
--[[http://company-mode.github.io/][Company mode]]
+- [[http://ensime.github.io/editors/emacs/cheat_sheet/][Ensime]]
+- [[https://emacs-helm.github.io/helm/][Helm]]
+- [[http://joaotavora.github.io/yasnippet/][Yassnippet]]
+- [[http://company-mode.github.io/][Company mode]]
