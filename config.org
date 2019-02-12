@@ -714,7 +714,7 @@ Define org-mode related keybinds:
 Define the locations of the different org files:
 
 #+BEGIN_SRC emacs-lisp
-  (setq org-agenda-files (list "~/org/todo.org"))
+  (setq org-agenda-files (list "~/.emacs.d/org/todo.org"))
 #+END_SRC
 
 Nicer indenting in =org-mode= files
