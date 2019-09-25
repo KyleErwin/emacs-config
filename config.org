@@ -90,7 +90,7 @@ The Roboto font from powerline is great.
 Doom themes everything. See themes [[https://github.com/hlissner/emacs-doom-themes/][here]]
 #+BEGIN_SRC emacs-lisp
 (use-package doom-themes)
-(load-theme 'doom-city-lights t)
+(load-theme 'doom-peacock t)
 
 (use-package all-the-icons)
 
@@ -169,6 +169,7 @@ Helm is amazing. Helm everything.
 
 (global-set-key (kbd "M-x")                          'undefined)
 (global-set-key (kbd "M-x")                          'helm-M-x)
+(global-set-key (kbd "<f9>")                          'helm-M-x)
 (global-set-key (kbd "M-y")                          'helm-show-kill-ring)
 (global-set-key (kbd "C-x C-f")                      'helm-find-files)
 (global-set-key (kbd "C-x b")                        'helm-mini)
@@ -419,6 +420,26 @@ Which key to show a list of keys that follow a speicific key-chord
 * General Dev Config
 
 General config for development that is agnostic of language.
+** Language Server
+
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-mode ;; Language Server Protocol, used by HIE
+  :init
+  (add-hook 'haskell-mode-hook #'lsp)
+  :hook (scala-mode . lsp)
+
+  :config
+  (setq lsp-prefer-flymake nil)
+  )
+
+(use-package lsp-ui ;; includes support for flycheck
+  :config
+  (lsp-ui-flycheck-enable t)
+  )
+
+(require 'lsp-haskell)
+
+#+END_SRC
 
 ** Company Mode
 
@@ -640,18 +661,20 @@ A major mode for markdown
 
 Use =scala-mode= for scala syntax highlighting
 #+BEGIN_SRC emacs-lisp
+;; Enable scala-mode and sbt-mode
 (use-package scala-mode
-  :ensure t
-  :defer t
-  :mode "\\.scala\\'")
-#+END_SRC
+  :mode "\\.s\\(cala\\|bt\\)$")
 
-Ensime
-#+BEGIN_SRC emacs-lisp
-(use-package ensime
-  :ensure t)
+(use-package sbt-mode
+  :commands sbt-start sbt-command
+  :config
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
 #+END_SRC
-
 ** Yaml
 
  #+BEGIN_SRC emacs-lisp
