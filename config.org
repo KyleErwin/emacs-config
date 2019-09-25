@@ -61,7 +61,7 @@ The Roboto font from powerline is great.
 
 ** Theme
 
-Doom themes everything. See themes [[https://github.com/hlissner/emacs-doom-themes/][here]]
+Doom themes are really pretty. See themes [[https://github.com/hlissner/emacs-doom-themes/][here]]
 #+BEGIN_SRC emacs-lisp
 (use-package doom-themes)
 (load-theme 'doom-peacock t)
@@ -71,8 +71,6 @@ Doom themes everything. See themes [[https://github.com/hlissner/emacs-doom-them
 (use-package doom-modeline
       :ensure t
       :hook (after-init . doom-modeline-mode))
-
-
 #+END_SRC
 
 Neo tree looks cool but I don't really use it
@@ -90,7 +88,6 @@ Keep old theme settings around just incase.
 ;; (load-theme 'spacemacs-dark t)
 ;; (use-package material-theme)
 ;; (load-theme 'material t)
-
 ;; (add-to-list 'custom-theme-load-path (expand-file-name "themes"
                                                        user-emacs-directory))
 ;; (use-package smart-mode-line
@@ -101,7 +98,7 @@ Keep old theme settings around just incase.
 
 ** Window Decoration
 
-Turn off unwanted window decoration. It gets in the way.
+Turn off unwanted window decoration as it gets in the way.
 #+BEGIN_SRC emacs-lisp
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
@@ -110,7 +107,6 @@ Turn off unwanted window decoration. It gets in the way.
 
 Maxmise on startup
 #+BEGIN_SRC emacs-lisp
-
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 #+END_SRC
 
