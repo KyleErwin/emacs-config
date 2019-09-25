@@ -44,35 +44,6 @@ Reload the configuration
   (global-set-key (kbd "C-c r") 'config-reload)
 #+END_SRC
 
-* Startup
-** Buffer Clean Up
-
-I never use the scratch buffer.
-#+BEGIN_SRC emacs-lisp
-(setq initial-scratch-message "")
-
-;; Removes *scratch* from buffer after the mode has been set.
-(defun remove-scratch-buffer ()
-  (if (get-buffer "*scratch*")
-      (kill-buffer "*scratch*")))
-(add-hook 'after-change-major-mode-hook 'remove-scratch-buffer)
-#+END_SRC
-
-If you really wanted to you could remove the messages buffer.
-#+BEGIN_SRC emacs-lisp
-;;(setq-default message-log-max nil)
-;;(kill-buffer "*Messages*")
-#+END_SRC
-
-Remove cpmpletions buffer.
-#+BEGIN_SRC emacs-lisp
-(add-hook 'minibuffer-exit-hook
-      '(lambda ()
-         (let ((buffer "*Completions*"))
-           (and (get-buffer buffer)
-                (kill-buffer buffer)))))
-#+END_SRC
-
 * Appearance
 ** Font Settings
 
