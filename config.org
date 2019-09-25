@@ -5,7 +5,9 @@
 My ever evolving emacs config.
 
 * Package Setup
+
 ** Configure Package Sources
+
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'package-archives
                '("melpa" . "https://melpa.org/packages/")
@@ -15,6 +17,7 @@ My ever evolving emacs config.
 #+END_SRC
 
 ** Bootstrap use-package
+
 #+BEGIN_SRC emacs-lisp
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -24,7 +27,6 @@ My ever evolving emacs config.
 #+END_SRC
 
 * Config Setup
-** Custom Config Functions
 
 Open / visit the configuration file
 #+BEGIN_SRC emacs-lisp
@@ -41,6 +43,7 @@ Reload the configuration
     (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
   (global-set-key (kbd "C-c r") 'config-reload)
 #+END_SRC
+
 * Startup
 ** Buffer Clean Up
 
