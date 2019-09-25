@@ -214,10 +214,8 @@ Include magit
    :bind ("C-c C-g C-c" . magit-commit-create))
 #+END_SRC
 
-Include git g
+** Gutter
 
-** utter. Git gutter works on save, don't want it
-interactive... for now.
 #+BEGIN_SRC emacs-lisp
  (use-package git-gutter)
 
@@ -312,7 +310,6 @@ Add expand-region
   (use-package expand-region
     :ensure t
     :bind ("C-=" . er/expand-region))
-
 #+END_SRC
 
 ** Spelling
@@ -350,7 +347,6 @@ Highlight the current line.
 #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode 1)
 #+END_SRC
-
 
 Inline display of colours.
 #+BEGIN_SRC emacs-lisp
